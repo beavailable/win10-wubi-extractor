@@ -9,7 +9,7 @@ C:\Windows\InputMethod\CHS\ChsWubiNew.lex
 
 # 用法
 ```
-./main.py src-file dest-file
+main.py src-file dest-file
 ```
 
 # 关于
