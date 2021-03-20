@@ -14,6 +14,7 @@ with open(src, 'rb') as sf:
 
 size = len(data)
 idx = 168
+eol = '\n' if os.name == 'posix' else '\r\n'
 with open(dest, 'w') as df:
     while idx < size:
         total_len = data[idx] | data[idx + 1] << 8
@@ -25,4 +26,4 @@ with open(dest, 'w') as df:
         value_len = total_len - 16
         value = data[idx:idx + value_len].decode('utf-16')
         idx += value_len + 2
-        df.write(f'{code} {value}\n')
+        df.write(f'{code} {value}{eol}')
